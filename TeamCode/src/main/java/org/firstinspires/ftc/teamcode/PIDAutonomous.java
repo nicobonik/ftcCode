@@ -4,7 +4,6 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
@@ -16,7 +15,6 @@ public class PIDAutonomous extends LinearOpMode {
 
     DcMotor leftDrive;
     DcMotor rightDrive;
-    GyroSensor gyro;
 
     @Override
     public void runOpMode() {
@@ -25,7 +23,6 @@ public class PIDAutonomous extends LinearOpMode {
         rightDrive = hardwareMap.get(DcMotor.class, "right_drive");
         leftDrive.setDirection(DcMotorSimple.Direction.FORWARD);
         rightDrive.setDirection(DcMotorSimple.Direction.REVERSE);
-        gyro = hardwareMap.gyroSensor.get("gyro_1");
 
         double leftPower;
         double rightPower;
